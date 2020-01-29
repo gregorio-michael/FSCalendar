@@ -230,7 +230,8 @@
 {
     [super layoutSubviews];
     
-    self.titleLabel.frame = self.contentView.bounds;
+    double labelWidth = self.bounds.size.width * 2;
+    self.titleLabel.frame = CGRectMake(-(labelWidth / 4), 0, labelWidth, self.contentView.bounds.size.height);
     
     if (self.header.scrollDirection == UICollectionViewScrollDirectionHorizontal) {
         CGFloat position = [self.contentView convertPoint:CGPointMake(CGRectGetMidX(self.contentView.bounds), CGRectGetMidY(self.contentView.bounds)) toView:self.header].x;
